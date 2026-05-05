@@ -3,6 +3,15 @@
 Vision-based teleoperation pipeline for dexterous robotic hands using only a monocular RGB camera.  
 It combines hand detection, 3D hand pose reconstruction, coordinate normalization and optimization-based retargeting to control robotic hands in a physics simulator.
 
+<p align="center">
+  <img src="intro.png" alt="Project Introduction" width="750">
+</p>
+
+<p align="center">
+  <img src="ex1.png" alt="Teleoperation Demo Example" width="750">
+</p>
+
+
 **Goal:** Map human hand motion from a standard RGB camera to joint commands of a dexterous robotic hand – no gloves, no depth cameras.
 
 ---
