@@ -77,11 +77,61 @@ SAPIEN Robot Hand Simulation
 Allegro Hand, Shadow Hand, LEAP Hand, DClaw, Ability Hand, Barrett Hand, SVH Hand.  
 Models are loaded from URDFs in the `hands/` directory.
 
+## Installation
+
+### Recommended Environment
+
+| Item | Recommended |
+|---|---|
+| OS | Ubuntu 20.04 |
+| Python | Python 3.10 |
+| GPU | NVIDIA RTX 4060 or better |
+| Camera | Standard monocular RGB webcam |
+
+A CUDA-enabled GPU is recommended for real-time HaMeR inference.
+
 ---
 
-## Project Structure
-Kinematic-Control-of-Robotic-Hands-Based-on-a-Monocular-RGB-Camera/
-├── DRBT2.py # Main teleoperation script
-├── hands/ # Robot URDF & meshes
-├── README.md
-└── requirements.txt
+### Install HaMeR
+
+This project uses HaMeR for monocular RGB-based 3D hand pose reconstruction.
+
+Please refer to the official HaMeR repository for detailed installation:
+
+```text
+https://github.com/geopavlakos/hamer
+```
+
+Typical installation:
+
+```bash
+git clone https://github.com/geopavlakos/hamer.git
+cd hamer
+pip install -e .[all]
+pip install -v -e third-party/ViTPose
+bash fetch_demo_data.sh
+cd ..
+```
+
+HaMeR also requires the MANO hand model. Please download it from the official MANO website and place it according to the HaMeR instructions.
+
+---
+
+### Install dex-retargeting
+
+This project uses `dex-retargeting` for optimization-based human-to-robot hand motion retargeting.
+
+Please refer to the official dex-retargeting repository for detailed installation:
+
+```text
+https://github.com/dexsuite/dex-retargeting
+```
+
+Typical installation:
+
+```bash
+git clone https://github.com/dexsuite/dex-retargeting.git
+cd dex-retargeting
+pip install -e .
+cd ..
+```
